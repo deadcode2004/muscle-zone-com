@@ -1,0 +1,749 @@
+<html lang="ar" dir="rtl"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdullah Gaber - Web Developer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/page-transitions.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: #000000;
+            background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: white;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 0;
+        }
+
+        .navbar {
+            position: relative;
+            z-index: 1;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0.5rem 2rem;
+            background: #000000;
+            border-bottom: 1px solid rgba(0, 255, 157, 0.1);
+        }
+
+        .home-link {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 1px solid #00ff9d;
+        }
+
+        .home-link:hover {
+            background-color: #00ff9d;
+            color: #000000;
+        }
+
+        .dev-name {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .code-tag {
+            color: #00ff9d;
+        }
+        /* Main Container Styles */
+        .main-container {
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 80px);
+            position: relative;
+            z-index: 1;
+        }
+
+        .info-card {
+            background: rgba(18, 18, 18, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 900px;
+            position: relative;
+            border: 1px solid rgba(0, 255, 157, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .name {
+            color: #00ff9d;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .title {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .bio {
+            color: #888;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-section {
+            background: rgba(18, 18, 18, 0.3);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(0, 255, 157, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.45);
+        }
+
+        .icon-wrapper {
+            color: #00ff9d;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-section h3 {
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-section p {
+            color: #fff;
+            margin-bottom: 0.3rem;
+        }
+
+        .institute-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-wrapper {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .school-logo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .profile-image {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 120px;
+            height: 120px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid #00ff9d;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .level {
+            color: #ffffff !important;
+        }
+
+        .institute-link {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .institute-link:hover {
+            color: #ffffff;
+        }
+
+        .email {
+            font-size: 0.9rem;
+            word-break: break-all;
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .email:hover {
+            color: #ffffff;
+        }
+
+        .footer {
+            position: relative;
+            z-index: 1;
+            padding: 1rem;
+            text-align: center;
+            border-top: 1px solid rgba(0, 255, 157, 0.1);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .website-link {
+            color: #00ff9d;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .website-link:hover {
+            color: #ffffff;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            color: #ffffff;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .social-link:hover {
+            color: #00ff9d;
+        }
+
+        .social-link:hover::after {
+            content: attr(title);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(18, 18, 18, 0.95);
+            color: #ffffff;
+            padding: 0.7rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 255, 157, 0.2);
+            backdrop-filter: blur(10px);
+            animation: tooltip-appear 0.2s ease;
+        }
+
+        .social-link:hover::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 4px solid transparent;
+        }
+
+        /* فيسبوك - يظهر على اليمين */
+        .social-link[href*="facebook"]::after {
+            left: calc(100% + 15px);
+            transform: translateY(-50%);
+        }
+
+        .social-link[href*="facebook"]::before {
+            left: calc(100% + 7px);
+            border-right-color: rgba(18, 18, 18, 0.95);
+        }
+
+        /* واتساب - يظهر على اليسار */
+        .social-link[href*="wa.me"]::after {
+            right: calc(100% + 15px);
+            transform: translateY(-50%);
+        }
+
+        .social-link[href*="wa.me"]::before {
+            right: calc(100% + 7px);
+            border-left-color: rgba(18, 18, 18, 0.95);
+        }
+
+        @keyframes tooltip-appear {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .copyright {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Skills Section Styles */
+        .skills-section {
+            padding: 3rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .skills-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skills-title {
+            color: #00ff9d;
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: rgba(18, 18, 18, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(0, 255, 157, 0.1);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #00ff9d;
+        }
+
+        .skill-card i {
+            font-size: 3rem;
+            color: #00ff9d;
+            margin-bottom: 1rem;
+        }
+
+        .skill-card h3 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-card p {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .main-container {
+                padding: 1rem;
+                min-height: auto;
+            }
+
+            .info-card {
+                padding: 1.5rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .header-section {
+                margin-bottom: 2rem;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                justify-content: center;
+            }
+
+            .header-text {
+                text-align: right;
+            }
+
+            .name {
+                font-size: 1.8rem;
+                margin-bottom: 0.3rem;
+            }
+
+            .bio {
+                max-width: 100%;
+                font-size: 0.85rem;
+            }
+
+            .profile-image {
+                width: 80px;
+                height: 80px;
+                margin: 0;
+                flex-shrink: 0;
+            }
+
+            .social-link:hover::after,
+            .social-link:hover::before {
+                display: none;
+            }
+
+            .footer {
+                padding: 1rem 0.5rem;
+            }
+
+            .footer-content {
+                gap: 0.8rem;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .website-link {
+                font-size: 1rem;
+            }
+
+            .copyright {
+                font-size: 0.8rem;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .name {
+                font-size: 1.8rem;
+            }
+
+            .title {
+                font-size: 1rem;
+            }
+
+            .info-section {
+                padding: 1rem;
+            }
+
+            .icon-wrapper {
+                font-size: 1.2rem;
+            }
+
+            .social-links {
+                gap: 2rem;
+            }
+
+            .social-link {
+                font-size: 1.2rem;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .main-container {
+                padding: 1rem;
+            }
+
+            .info-card {
+                padding: 1.5rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .header-section {
+                margin-bottom: 2rem;
+            }
+
+            .name {
+                font-size: 2rem;
+            }
+
+            .bio {
+                max-width: 95%;
+                font-size: 0.85rem;
+            }
+
+            .profile-image {
+                position: relative;
+                top: 0;
+                right: 0;
+                margin: 0 auto 1.5rem auto;
+            }
+
+            .social-link:hover::after,
+            .social-link:hover::before {
+                display: none;
+            }
+
+            .footer {
+                padding: 1rem 0.5rem;
+            }
+
+            .footer-content {
+                gap: 0.8rem;
+            }
+
+            .website-link {
+                font-size: 1rem;
+            }
+
+            .copyright {
+                font-size: 0.8rem;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .name {
+                font-size: 1.8rem;
+            }
+
+            .title {
+                font-size: 1rem;
+            }
+
+            .info-section {
+                padding: 1rem;
+            }
+
+            .icon-wrapper {
+                font-size: 1.2rem;
+            }
+
+            .social-links {
+                gap: 0.8rem;
+            }
+
+            .social-link {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+
+    <script>
+        // إضافة عنصر الانتقال
+        document.body.insertAdjacentHTML('beforeend', `
+            <div class="page-transition-overlay">
+                <div class="loading-text">انتظر</div>
+                <div class="loading-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+        `);
+        const transitionOverlay = document.querySelector('.page-transition-overlay');
+
+        // تطبيق الانتقال على كل الروابط
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const target = this.getAttribute('href');
+                // تجاهل الروابط الداخلية والهاشتاج
+                if (target && !target.startsWith('#') && !target.startsWith('javascript')) {
+                    e.preventDefault();
+                    transitionOverlay.classList.add('active');
+                    setTimeout(() => {
+                        window.location.href = target;
+                    }, 600);
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <nav class="navbar">
+        <a class="home-link" href="index.html">
+            <i class="fas fa-home"></i>
+            الرئيسية
+        </a>
+        <div class="dev-name">
+            Abdullah Gaber
+            <span class="code-tag">&lt;/&gt;</span>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <div class="info-card">
+            <div class="header-section">
+                <div class="profile-image">
+                    <img src="css/PRO.jpeg" alt="Abdullah Gaber">
+                </div>
+                <div class="header-text">
+                    <h1 class="name">عبدالله جابر</h1>
+                    <p class="title">Web Site Designer</p>
+                    <p class="bio">
+                        متخصص في تطوير المواقع الإلكترونية وتصميم واجهات المستخدم. أسعى دائماً لتقديم أفضل تجربة مستخدم ممكنة من
+                        خلال تصميمات عصرية وتقنيات حديثة.
+                    </p>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-section study">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>الدراسة</h3>
+                    <div class="institute-info">
+                        <a href="https://www.facebook.com/HIMMahalla" target="_blank" class="institute-link">المعهد العالي للإدارة - HIM</a>
+                        <div class="logo-wrapper">
+                            <img src="images/HIM.jpg" alt="HIM Logo" class="school-logo">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section personal">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>الشخصي</h3>
+                    <p>التخصص: المحاسبة والمراجعة</p>
+                    <p class="level">المستوى الثالث</p>
+                </div>
+
+                <div class="info-section location">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>العنوان</h3>
+                    <p>العنوان: 6 أكتوبر</p>
+                    <p>الإقامة: زفتي الغربية</p>
+                </div>
+
+                <div class="info-section contact">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>التواصل</h3>
+
+                    <p>01014270482</p>
+                    <a href="mailto:abdullahgaber2004@gmail.com" class="email" target="_blank">abdullahgaber2004@gmail.com</a>
+                </div>
+            </div>
+
+
+        </div>
+    </main>
+
+    <!-- قسم المهارات البرمجية -->
+    <section class="skills-section">
+        <div class="skills-container">
+            <h2 class="skills-title">المهارات البرمجية</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fab fa-html5"></i>
+                    <h3>HTML5</h3>
+                    <p>هيكلة صفحات الويب</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-css3-alt"></i>
+                    <h3>CSS3</h3>
+                    <p>تنسيق وتصميم الواجهات</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-js"></i>
+                    <h3>JavaScript</h3>
+                    <p>برمجة تفاعلات المستخدم</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-bootstrap"></i>
+                    <h3>Bootstrap</h3>
+                    <p>إطار عمل تصميم متجاوب</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="https://abdullahgaber.com" class="website-link" target="_blank">Abdullahgaber.com</a>
+            <div class="social-links">
+                <a href="https://www.facebook.com/r2005.end.of.relationship.2022/" class="social-link" title="حساب المبرمج على فيسبوك" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://wa.me/201004216774" class="social-link" title="حساب المبرمج على واتساب" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            <div class="copyright">
+                جميع الحقوق محفوظة Abdullah Gaber 2025 ©
+            </div>
+        </div>
+    </footer>
+
+</body></html>

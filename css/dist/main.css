@@ -1,0 +1,31 @@
+/* Main Styles */
+@import url('../style.css');
+
+/* Focus styles */
+:focus {
+    outline: 2px solid #52bfde;
+    outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 2px solid #52bfde;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(82, 191, 222, 0.3);
+}
+
+/* Components */
+@import url('../loading.css');
+@import url('../contact.css');
+@import url('../scroll-top.css');
+@import url('../social-sidebar.css');
+@import url('../pricing.css');
+@import url('../new-footer.css');
+@import url('../favicon.css');
+
+/* Transitions */
+@import url('../page-transition.css');
+@import url('../page-transitions.css');

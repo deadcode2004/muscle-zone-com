@@ -1,0 +1,14 @@
+/* Favicon optimizations */
+link[rel="icon"] {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+    width: 96px !important;
+    height: 96px !important;
+}
+
+/* For better visibility in browser tab */
+.favicon-large {
+    width: 128px !important;
+    height: 128px !important;
+}

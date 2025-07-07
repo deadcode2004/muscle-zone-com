@@ -1,0 +1,9 @@
+{
+  "name": "muscle-zone-gym",
+  "version": "1.0.0",
+  "description": "Muscle Zone Gym Website",
+  "main": "index.js",
+  "dependencies": {
+    "nodemailer": "^6.9.1"
+  }
+}

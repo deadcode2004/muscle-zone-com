@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muscle Zone Gym</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about.css">
+    <style>
+                @keyframes borderSlide {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+        }
+
+        .navbar.fixed-top {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 12px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Add padding to body to prevent content from hiding under navbar */
+        body {
+            padding-top: 0;
+        }
+
+        .navbar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg,
+                transparent,
+                rgba(0, 123, 255, 0.4) 20%,
+                rgba(0, 191, 255, 0.6) 50%,
+                rgba(0, 123, 255, 0.4) 80%,
+                transparent
+            );
+            animation: borderSlide 3s ease-in-out infinite;
+        }
+
+        .page-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .page-background::before,
+        .page-background::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0.9;
+            background-color: rgba(0, 0, 0, 0.95);
+        }
+
+        .page-background::before {
+            background: url('images/3.jpeg') no-repeat center center;
+            background-size: cover;
+            filter: blur(0);
+        }
+
+        .page-background::after {
+            background: url('images/7.jpeg') no-repeat center center;
+            background-size: cover;
+            clip-path: polygon(0 0, 100% 100%, 0 100%);
+            filter: blur(0);
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-background"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container px-5">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-dumbbell fa-2x text-light"></i>
+                <span class="ms-2 text-light">Muscle Zone</span>
+            </a>
+            <a href="index.html" class="btn btn-outline-light">
+                <i class="fas fa-arrow-right ml-2"></i>
+                العودة للرئيسية
+            </a>
+        </div>
+    </nav>
+
+    <div class="about-hero">
+        <div class="container-fluid px-5">
+            <!-- قسم فريق العمل -->
+            <div class="team-section pb-5 mt-5">
+                <h2 class="text-center mb-5 fade-in">فريق العمل</h2>
+                <div class="row justify-content-center gap-2">
+                    <!-- عضو الفريق 1 -->
+                    <div class="col-lg-2 col-md-3 mb-4 fade-in px-3">
+                        <div class="team-member">
+                            <div class="member-img-container">
+                                <div class="member-img" >
+                                    <img src="images/gym/MOHAMED.jpg" alt="كابتن محمد" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="member-img-hover" >
+                                    <img src="images/gym/MOHAMED.jpg" alt="كابتن محمد" class="hover-img">
+                                </div>
+                            </div>
+                            <div class="member-info text-center mt-3">
+                                <h4>كابتن محمد</h4>
+                                <p class="text-muted">المدير</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- عضو الفريق 2 -->
+                    <div class="col-lg-2 col-md-3 mb-4 fade-in px-3">
+                        <div class="team-member">
+                            <div class="member-img-container">
+                                <div class="member-img" >
+                                    <img src="images/gym/Img1.jpeg" alt="كوتش رقيه" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="member-img-hover" >
+                                    <img src="images/gym/Img1.jpeg" alt="كوتش رقيه" class="hover-img">
+                                </div>
+                            </div>
+                            <div class="member-info text-center mt-3">
+                                <h4>كوتش رقيه</h4>
+                                <p class="text-muted">مدربة</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- عضو الفريق 3 -->
+                    <div class="col-lg-2 col-md-3 mb-4 fade-in px-3">
+                        <div class="team-member">
+                            <div class="member-img-container">
+                                <div class="member-img" >
+                                    <img src="images/gym/img4.jpeg" alt="كوتش محمد" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="member-img-hover" >
+                                    <img src="images/gym/img4.jpeg" alt="كوتش محمد" class="hover-img">
+                                </div>
+                            </div>
+                            <div class="member-info text-center mt-3">
+                                <h4>كوتش محمد</h4>
+                                <p class="text-muted">مدرب</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- عضو الفريق 3 -->
+                    <div class="col-lg-2 col-md-3 mb-4 fade-in px-3">
+                        <div class="team-member">
+                            <div class="member-img-container">
+                                <div class="member-img" >
+                                    <img src="images/gym/img2.jpeg" alt="كوتش هدير" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="member-img-hover" >
+                                    <img src="images/gym/img2.jpeg" alt="كوتش هدير" class="hover-img">
+                                </div>
+                            </div>
+                            <div class="member-info text-center mt-3">
+                                <h4>كوتش هدير</h4>
+                                <p class="text-muted">مدربة</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- عضو الفريق 4 -->
+                    <div class="col-lg-2 col-md-3 mb-4 fade-in px-3">
+                        <div class="team-member">
+                            <div class="member-img-container">
+                                <div class="member-img" >
+                                    <img src="images/gym/img3.jpeg" alt="كوتش فردوس" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="member-img-hover" >
+                                    <img src="images/gym/img3.jpeg" alt="كوتش فردوس" class="hover-img">
+                                </div>
+                            </div>
+                            <div class="member-info text-center mt-3">
+                                <h4>كوتش فردوس</h4>
+                                <p class="text-muted">مدربة</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="text-center mb-5 fade-in mt-5 pt-5">من نحن</h1>
+            <div class="row align-items-center">
+                <div class="col-12 slide-in-right">
+                    <h2 class="mb-4"><span class="ms-2">Muscle Zone</span> رحباً بكم في مصل زون جيم</h2>
+                    <p>نحن نؤمن بأن الصحة واللياقة البدنية هي رحلة شخصية لكل فرد. في مصل زون جيم، نقدم لكم:</p>
+                    <ul class="feature-list">
+                        <li class="fade-in">
+                            <i class="fas fa-check-circle text-success"></i>
+                            أحدث المعدات الرياضية
+                        </li>
+                        <li class="fade-in">
+                            <i class="fas fa-check-circle text-success"></i>
+                            مدربين محترفين
+                        </li>
+                        <li class="fade-in">
+                            <i class="fas fa-check-circle text-success"></i>
+                            برامج تدريب متخصصة
+                        </li>
+                        <li class="fade-in">
+                            <i class="fas fa-check-circle text-success"></i>
+                            بيئة تدريب محفزة وصحية
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row mt-0 justify-content-center gap-3">
+                <div class="col-12 col-md-4 fade-in px-2" style="max-width: 350px;">
+                    <div class="value-card p-4" style="background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(5px); border-radius: 15px;">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>رؤيتنا</h3>
+                        <p>أن نكون الوجهة الأولى للياقة البدنية في المنطقة.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 fade-in px-2" style="max-width: 350px;">
+                    <div class="value-card p-4" style="background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(5px); border-radius: 15px;">
+                        <i class="fas fa-rocket"></i>
+                        <h3>مهمتنا</h3>
+                        <p>مساعدة أعضائنا في تحقيق أهدافهم الصحية واللياقة البدنية.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 fade-in px-2" style="max-width: 350px;">
+                    <div class="value-card p-4" style="background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(5px); border-radius: 15px;">
+                        <i class="fas fa-star"></i>
+                        <h3>قيمنا</h3>
+                        <p>الاحترافية، الالتزام، التحفيز، والدعم المستمر لأعضائنا.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="py-5" style="background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8));"></div>
+
+    <footer class="text-center py-4">
+        <div class="container px-5">
+            <p class="mb-0 signature-text">{ <span class="json-key">"copyright"</span> : Muscle Zone 2024 }</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

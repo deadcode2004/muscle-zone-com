@@ -1,0 +1,112 @@
+.social-sidebar {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.social-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-sidebar li {
+    margin: 5px 0;
+    transform: translateX(0);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.social-sidebar li:hover a {
+    width: 140px;
+    padding: 12px 20px;
+}
+
+.social-sidebar a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 12px;
+    width: 45px;
+    border-radius: 30px 0 0 30px;
+    transition: all 0.3s ease;
+    box-shadow: -2px 2px 5px rgba(0,0,0,0.3);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.social-sidebar a i {
+    width: 30px;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.social-sidebar li:hover i {
+    animation: iconMove 0.5s ease forwards;
+}
+
+@keyframes iconMove {
+    to {
+        transform: translateX(-10px);
+    }
+}
+
+.social-sidebar a span {
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+    margin-right: 25px;
+}
+
+.social-sidebar .whatsapp {
+    background: #25D366;
+}
+
+.social-sidebar .facebook {
+    background: #1877F2;
+}
+
+.social-sidebar .instagram {
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+}
+
+.social-sidebar .map {
+    background: #FF5252;
+}
+
+.social-sidebar li:hover a i {
+    transform: rotate(360deg);
+}
+
+/* Animation for each item */
+.social-sidebar li:nth-child(1) {
+    animation: slideIn 0.5s ease forwards 0.2s;
+}
+
+.social-sidebar li:nth-child(2) {
+    animation: slideIn 0.5s ease forwards 0.4s;
+}
+
+.social-sidebar li:nth-child(3) {
+    animation: slideIn 0.5s ease forwards 0.6s;
+}
+
+.social-sidebar li:nth-child(4) {
+    animation: slideIn 0.5s ease forwards 0.8s;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

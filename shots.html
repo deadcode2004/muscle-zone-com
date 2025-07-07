@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لقطات - Muscle Zone Gym</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('images/shots/shot1.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .site-header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 12px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        @keyframes borderSlide {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+        }
+
+        .site-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg,
+                transparent,
+                rgba(0, 123, 255, 0.4) 20%,
+                rgba(0, 191, 255, 0.6) 50%,
+                rgba(0, 123, 255, 0.4) 80%,
+                transparent
+            );
+            animation: borderSlide 3s ease-in-out infinite;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .site-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+        }
+
+        .site-logo img {
+            width: 45px;
+            height: 45px;
+            margin-left: 12px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            padding: 2px;
+            background: rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .site-logo:hover img {
+            border-color: rgba(0, 123, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        .site-logo span {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: white;
+            font-family: 'Cairo', sans-serif;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            letter-spacing: 0.5px;
+        }
+
+        .back-button {
+            background: linear-gradient(45deg, rgba(0, 86, 179, 0.85), rgba(0, 191, 255, 0.85));
+            color: white;
+            padding: 6px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            font-weight: 400;
+            border: none;
+            gap: 8px;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-button:hover {
+            background: linear-gradient(45deg, rgba(0, 68, 148, 0.9), rgba(0, 166, 255, 0.9));
+        }
+
+        .back-button i {
+            font-size: 0.85rem;
+            transition: transform 0.3s ease;
+        }
+
+        .back-button:hover i {
+            transform: translateX(3px);
+        }
+
+        .shots-container {
+            padding: 100px 0 50px;
+        }
+
+        .content-card {
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('images/shots/shot2.jpeg');
+            background-size: cover;
+            background-position: center;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .title-wrapper {
+            margin-bottom: 30px;
+        }
+
+        .row {
+            margin: 0 -10px;
+        }
+
+        .col-md-6 {
+            padding: 0 10px;
+            margin-bottom: 20px;
+        }
+
+        .shot-card {
+            position: relative;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            background: #2a2a2a;
+            transition: all 0.3s ease;
+        }
+
+        .shot-card::after {
+            content: '';
+            position: absolute;
+            width: 90%;
+            height: 30px;
+            bottom: -25px;
+            left: 5%;
+            background: rgba(0, 123, 255, 0);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+
+        .shot-card:hover::after {
+            background: rgba(0, 123, 255, 0.4);
+            filter: blur(15px);
+            transform: scaleX(1.2);
+        }
+
+        .video-card video {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            background-color: #2a2a2a;
+            max-width: 3840px;
+            max-height: 2160px;
+            aspect-ratio: 16/9;
+        }
+
+        /* تحسين أزرار التحكم */
+        .video-card video::-webkit-media-controls {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+        }
+
+        .video-card video::-webkit-media-controls-panel {
+            padding: 0 10px;
+        }
+
+        .shot-card img, .shot-card video {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .shot-card {
+            position: relative;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .shot-card:hover img, .shot-card:hover video {
+            transform: scale(1.02);
+        }
+
+        .title-wrapper {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-title-container {
+            text-align: center;
+            margin-bottom: 40px;
+            display: inline-block;
+            padding: 6px 20px;
+            background: linear-gradient(45deg, rgba(0, 86, 179, 0.2), rgba(0, 191, 255, 0.2));
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        .page-title {
+            margin: 0;
+            font-size: 1.2rem;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+
+
+
+
+        @media (max-width: 768px) {
+            .shot-card img, .shot-card video {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header fixed-top">
+        <div class="header-content">
+            <a href="index.html" class="site-logo">
+                <img src="images/favicon.png" alt="Muscle Zone Gym Logo">
+                <span>Muscle Zone Gym</span>
+            </a>
+            <a href="index.html" class="back-button">
+                <span>العودة للرئيسية</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </header>
+
+    <div class="container shots-container">
+        <div class="content-card">
+            <div class="title-wrapper">
+                <div class="page-title-container">
+                    <h1 class="page-title">لقطات من الجيم</h1>
+                </div>
+            </div>
+            
+            <div class="row">
+            <!-- صور -->
+            <div class="col-md-6 col-lg-4">
+                <div class="shot-card">
+                    <img src="images/shots/shot1.jpeg" alt="لقطة 1">
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="shot-card">
+                    <img src="images/shots/shot2.jpeg" alt="لقطة 2">
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="shot-card">
+                    <img src="images/shots/shot3.jpeg" alt="لقطة 3">
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="shot-card">
+                    <img src="images/shots/shot4.jpeg" alt="لقطة 4">
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="shot-card">
+                    <img src="images/shots/shot5.jpeg" alt="لقطة 5">
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="shot-card">
+                    <img src="images/shots/shot6.jpeg" alt="لقطة 6">
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="shot-card">
+                    <img src="images/shots/shot7.jpeg" alt="لقطة 7">
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="shot-card">
+                    <img src="images/shots/shot8.jpeg" alt="لقطة 8">
+                </div>
+            </div>
+
+            <!-- فيديو يوتيوب -->
+            <div class="col-md-6 col-lg-4">
+                <div class="shot-card video-card">
+                    <video controls playsinline preload="metadata" poster="images/shots/shot1.jpeg">
+                        <source src="images/shots/Video 2025-05-12 at 12.44.45 PM.mp4" type="video/mp4" size="2160">
+                        عذراً، متصفحك لا يدعم تشغيل الفيديو.
+                    </video>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="typing-animation">
+                    <span class="bracket">{</span>
+                    <span class="property">"copyright"</span>
+                    <span class="colon"> : </span>
+                    <span class="value">Muscle Zone 2024 </span>
+                    <span class="bracket">}</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .site-footer {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .typing-animation {
+            font-family: 'Courier New', monospace;
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        .typing-animation .bracket {
+            color: #ff79c6;
+            animation: pulse 2s infinite;
+        }
+
+        .typing-animation .property {
+            color: #50fa7b;
+            margin: 0 5px;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .typing-animation .colon {
+            color: #bd93f9;
+            animation: blink 1s infinite;
+        }
+
+        .typing-animation .value {
+            color: #f1fa8c;
+            margin-left: 5px;
+            animation: typeWriter 2s steps(20) infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-20px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes typeWriter {
+            0% { border-right: 2px solid #f1fa8c; }
+            50% { border-right: 2px solid transparent; }
+            100% { border-right: 2px solid #f1fa8c; }
+        }
+
+        /* Add margin to main content to prevent overlap with fixed footer */
+        .content {
+            margin-bottom: 80px;
+        }
+    </style>
+</body>
+</html>

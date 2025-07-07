@@ -1,0 +1,27 @@
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 55px;
+    height: 55px;
+    background-color: rgba(0, 123, 255, 0.9);
+    color: white;
+    border-radius: 50%;
+    display: flex; /* Show by default */
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    font-size: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.scroll-to-top:hover {
+    background-color: #0056b3;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}

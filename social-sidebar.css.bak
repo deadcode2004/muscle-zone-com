@@ -1,0 +1,113 @@
+/* Social Media Sidebar */
+.social-sidebar {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+}
+
+.social-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-sidebar li {
+    margin-bottom: 10px;
+}
+
+.social-sidebar a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    transition: all 0.3s ease;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 50px;
+    position: relative;
+    left: 0; /* Changed from right to left for RTL effect */
+}
+
+.social-sidebar a span {
+    white-space: nowrap;
+    margin-left: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-weight: bold;
+}
+
+.social-sidebar i {
+    font-size: 20px;
+    width: 30px;
+    text-align: center;
+}
+
+/* Social Media Colors */
+.social-sidebar .facebook {
+    background-color: #3b5998;
+}
+
+.social-sidebar .instagram {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+
+.social-sidebar .whatsapp {
+    background-color: #25d366;
+}
+
+/* Individual hover effects - Each button moves independently */
+.social-sidebar .whatsapp:hover {
+    left: 5px; /* Moves from left to right */
+    width: 150px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.social-sidebar .whatsapp:hover span {
+    opacity: 1;
+}
+
+.social-sidebar .instagram:hover {
+    left: 5px; /* Moves from left to right */
+    width: 150px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.social-sidebar .instagram:hover span {
+    opacity: 1;
+}
+
+.social-sidebar .facebook:hover {
+    left: 5px; /* Moves from left to right */
+    width: 150px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.social-sidebar .facebook:hover span {
+    opacity: 1;
+}
+
+/* Add subtle entrance animation */
+@keyframes slideIn {
+    from { left: -10px; opacity: 0; }
+    to { left: 0; opacity: 1; }
+}
+
+.social-sidebar a {
+    animation: slideIn 0.5s forwards;
+}
+
+.social-sidebar li:nth-child(1) a {
+    animation-delay: 0.1s;
+}
+
+.social-sidebar li:nth-child(2) a {
+    animation-delay: 0.3s;
+}
+
+.social-sidebar li:nth-child(3) a {
+    animation-delay: 0.5s;
+}

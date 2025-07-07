@@ -1,0 +1,331 @@
+/* Contact Section Styles */
+.contact-section {
+    overflow-x: hidden;
+    width: 100%;
+}
+#contact {
+    position: relative;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.95), rgba(0, 40, 83, 0.95));
+    color: white;
+    overflow: hidden;
+}
+
+.contact-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+}
+
+.contact-container {
+    position: relative;
+    z-index: 1;
+    padding: 40px 0;
+}
+
+.contact-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.contact-card.featured {
+    background: #0ea5e9;
+    color: white;
+    transform: translateY(-10px);
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #0ea5e9;
+    font-size: 1.5rem;
+    color: #0ea5e9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-icon i {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-card h3 {
+    color: #0f172a;
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+
+.contact-card p {
+    color: #64748b;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.contact-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #0ea5e9;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-btn:hover {
+    transform: translateY(-2px);
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+}
+
+.contact-hours {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hours-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.hours-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hours-item:hover {
+    transform: translateY(-3px);
+}
+
+.hours-item .day {
+    color: #0ea5e9;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.hours-item .time {
+    color: #0f172a;
+    font-size: 1rem;
+}
+
+.contact-form .form-control {
+    background-color: #e2e8f0;
+    border: 1px solid #0ea5e9;
+    color: #0f172a;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.contact-form .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.contact-form .form-control:focus {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    border-color: #007bff;
+}
+
+.contact-form textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-form .btn-primary {
+    background: linear-gradient(45deg, #007bff, #00d4ff);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.contact-form .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+}
+
+.contact-form .btn-primary:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #007bff, #00d4ff, #007bff);
+    border-radius: 10px;
+    z-index: -1;
+    background-size: 200%;
+    animation: moveGradient 3s linear infinite;
+}
+
+@media (max-width: 300px) {
+    .contact-section {
+        margin-top: 40px;
+        padding-top: 20px;
+    }
+    .contact-section .col-md-6 {
+        position: relative;
+        padding-bottom: 40px;
+    }
+    .contact-section .col-md-6:not(:last-child) {
+        border-bottom: 3px solid rgba(0, 123, 255, 0.3);
+        margin-bottom: 40px;
+    }
+    .contact-card {
+        padding: 15px;
+        min-height: 180px;
+        max-width: 260px;
+        margin: 0 auto;
+    }
+    
+    .contact-card.featured {
+        transform: none;
+    }
+    
+    .contact-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .contact-card h3 {
+        font-size: 1.3rem;
+        margin: 15px 0;
+    }
+    
+    .contact-card p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .contact-section .col-md-6 {
+        margin-bottom: 30px;
+    }
+    .contact-card {
+        padding: 20px 15px;
+        min-height: 200px;
+        max-width: 100%;
+        margin: 0;
+    }
+    
+    .contact-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .contact-card h3 {
+        font-size: 1.1rem;
+        margin: 10px 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .contact-card p {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+        word-break: break-all;
+    }
+
+    .contact-card:has(.fa-envelope) p {
+        font-size: 0.85rem;
+        word-break: break-all;
+        line-height: 1.2;
+    }
+
+    .contact-btn {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+
+    .row.g-4 {
+        row-gap: 1.5rem !important;
+    }
+}
+
+@media (min-width: 1080px) {
+    .contact-card {
+        padding: 25px;
+        min-height: 250px;
+    }
+    
+    .contact-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .contact-card h3 {
+        font-size: 1.2rem;
+        margin: 15px 0;
+    }
+    
+    .contact-card p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .contact-card:has(.fa-envelope) p {
+        font-size: 0.9rem;
+    }
+
+    .contact-btn {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+
+    .row.g-4 {
+        row-gap: 2rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hours-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form-container {
+        padding: 20px;
+    }
+}
